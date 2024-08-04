@@ -8,9 +8,13 @@ import androidx.navigation.compose.composable
 
 internal fun NavGraphBuilder.departureListNavigator(
     contentPadding: PaddingValues,
+    showSnackBarMessage: (String) -> Unit,
 ) {
     composable(DepartureListRoute) {
-        DepartureListScreen(modifier = Modifier.padding(contentPadding))
+        DepartureListScreen(
+            modifier = Modifier.padding(contentPadding),
+            showSnackBarMessage = showSnackBarMessage
+        )
     }
 }
 
