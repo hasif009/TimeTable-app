@@ -23,6 +23,8 @@ data class Departures(
     val direction: String,
     @SerialName("line_code")
     val lineCode: String,
+    @SerialName("ride_id")
+    val rideId: Long,
 )
 
 

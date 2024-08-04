@@ -20,10 +20,12 @@ fun DepartureItem(
 ) {
 
     Row(modifier = modifier.fillMaxWidth()) {
-        Column(modifier = Modifier
-            .weight(0.8F)
-            .padding(all = 16.dp)) {
-            Text(text = departure.directiom, maxLines = 2)
+        Column(
+            modifier = Modifier
+                .weight(0.8F)
+                .padding(all = 16.dp)
+        ) {
+            Text(text = departure.direction, maxLines = 2)
             Text(text = departure.lineCode, maxLines = 2)
         }
         Box(modifier = Modifier.padding(top = 16.dp, end = 8.dp)) {
@@ -38,8 +40,9 @@ fun DepartureItem(
 fun DepartureItemPreview() {
     val departure = Departure(
         time = "12.30",
-        directiom = "Essen",
-        lineCode = "L027"
+        direction = "Essen",
+        lineCode = "L027",
+        rideId = 1234L
     )
     Surface {
         DepartureItem(departure = departure)

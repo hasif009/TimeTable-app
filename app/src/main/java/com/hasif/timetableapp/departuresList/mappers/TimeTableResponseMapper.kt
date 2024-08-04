@@ -8,12 +8,13 @@ class TimeTableResponseMapper @Inject constructor(
     private val timeZoneMapper: TimeZoneMapper
 ) {
 
-    suspend operator fun invoke(departures: List<Departures>): List<Departure> {
+    operator fun invoke(departures: List<Departures>): List<Departure> {
         return departures.map { item ->
             Departure(
                 time = timeZoneMapper.invoke(item.dateTime),
                 lineCode = item.lineCode,
-                directiom = item.direction
+                direction = item.direction,
+                rideId = item.rideId,
             )
         }
     }
