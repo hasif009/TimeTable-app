@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -28,6 +29,7 @@ fun DepartureHeader(
             .fillMaxWidth()
             .height(56.dp)
             .background(color = Color.Green)
+            .testTag(HEADER_TITLE_TAG)
     ) {
 
         Text(
@@ -43,3 +45,5 @@ fun DepartureHeader(
         }
     }
 }
+
+const val HEADER_TITLE_TAG = "title_tag"

@@ -17,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.hasif.timetableapp.commonui.components.FullScreenLoading
@@ -84,9 +85,16 @@ fun DepartureListScreen(
                             .fillMaxWidth()
                             .nestedScroll(pullToRefreshState.nestedScrollConnection)
                     ) {
-                        LazyColumn(modifier = Modifier.padding(all = 4.dp)) {
-                            itemsIndexed(uiState) { _, item ->
-                                DepartureItem(departure = item)
+                        LazyColumn(
+                            modifier = Modifier
+                                .padding(all = 4.dp)
+                                .testTag(DEPARTURE_LIST_TAG)
+                        ) {
+                            itemsIndexed(uiState) { position, item ->
+                                DepartureItem(
+                                    departure = item,
+                                    modifier = Modifier.testTag("position=$position")
+                                )
                             }
                         }
                     }
@@ -98,3 +106,5 @@ fun DepartureListScreen(
     }
 
 }
+
+const val DEPARTURE_LIST_TAG = "departure_list"

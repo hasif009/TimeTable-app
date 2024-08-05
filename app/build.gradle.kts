@@ -23,7 +23,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.hasif.timetableapp.AppTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -90,6 +90,13 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.hilt.test)
+    androidTestImplementation(libs.okhttp.mockwebserver)
+    kspAndroidTest(libs.hilt.android.compliler)
+    androidTestImplementation(libs.kakao)
+    androidTestImplementation(libs.kakao.compose)
+    androidTestImplementation(libs.kaspresso)
+    androidTestImplementation(libs.kaspresso.compose)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }

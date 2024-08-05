@@ -8,6 +8,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
+import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -15,7 +16,10 @@ import okio.Timeout
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
+
+const val BASE_URL_INTERCEPTOR_KEY = "BaseUrlInterceptor"
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -25,7 +29,7 @@ class NetworkingCoreModule {
     @Singleton
     fun providesOkhttpClient(
         headerInterceptor: FlixHeaderInterceptor,
-        baseUrlInterceptor: BaseUrlInterceptor,
+        @Named(BASE_URL_INTERCEPTOR_KEY) baseUrlInterceptor: Interceptor,
     ): OkHttpClient {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
 

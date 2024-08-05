@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.hasif.timetableapp.departuresList.ui.screen.DepartureListRoute
@@ -37,7 +38,7 @@ internal fun MainNavigationHost(
 
     Scaffold(
         snackbarHost = {
-            SnackbarHost(hostState = snackbarHostState, modifier = Modifier)
+            SnackbarHost(hostState = snackbarHostState, modifier = Modifier.testTag(MAIN_HOST_TAG))
         }
     ) { contentPadding ->
         NavHost(navController = navController, startDestination = DepartureListRoute) {
@@ -46,3 +47,5 @@ internal fun MainNavigationHost(
 
     }
 }
+
+const val MAIN_HOST_TAG = "main_screen"
