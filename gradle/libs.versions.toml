@@ -20,6 +20,10 @@ room = "2.6.1"
 kakao = "3.6.1"
 kakao_compose = "0.4.3"
 kaspresso = "1.5.5"
+truth = "1.4.4"
+mockito_core = "5.2.0"
+mockito_kotlin = "5.4.0"
+coroutines = "1.8.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,7 +51,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit" }
 retrofit_convertor_kotlinx_serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization" }
 okhttp_bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp_bom" }
 okhttp = { module = "com.squareup.okhttp3:okhttp" }
-okhttp_mockwebserver = {module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp_bom"}
+okhttp_mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp_bom" }
 okhttp_loggin_interceptor = { module = "com.squareup.okhttp3:logging-interceptor" }
 koltinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "koltinx-serialization" }
 room = { module = "androidx.room:room-runtime", version.ref = "room" }
@@ -56,8 +60,12 @@ room_ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room_test = { module = "androidx.room:room-testing", version.ref = "room" }
 kakao = { module = "io.github.kakaocup:kakao", version.ref = "kakao" }
 kakao_compose = { module = "io.github.kakaocup:compose", version.ref = "kakao_compose" }
-kaspresso = {module = "com.kaspersky.android-components:kaspresso", version.ref = "kaspresso"}
+kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref = "kaspresso" }
 kaspresso_compose = { module = "com.kaspersky.android-components:kaspresso-compose-support", version.ref = "kaspresso" }
+truth = { module = "com.google.truth:truth", version.ref = "truth" }
+mockito_core = {module = "org.mockito:mockito-core", version.ref = "mockito_core"}
+mockito_kotlin = {module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito_kotlin"}
+coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
